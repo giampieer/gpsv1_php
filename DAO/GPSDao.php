@@ -5,9 +5,8 @@ class GPSDao {
     public function GrabarLocalizacion(GPSBean $obj){
         $i=0;
         try {
-            $codlugar=$obj->getCodgo();
             $lugar=$obj->getLugar();
-            $sql="insert into localizacion(lugar,coda) values ('$lugar','$codlugar')";
+            $sql="insert into localizacion(lugar,coda) values ('$lugar', null)";
             $objc=new ConexionBD();
             $cn=$objc->getconexionBD();
             $i= mysqli_query($cn, $sql);
